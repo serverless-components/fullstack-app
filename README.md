@@ -2,6 +2,8 @@
 
 A complete, serverless, full-stack application built on AWS Lambda, AWS HTTP API, Express.js, React and DynamoDB.
 
+**Live Demo:** [https://www.serverless-fullstack-app.com](https://www.serverless-fullstack-app.com)
+
 ## Quick Start
 
 Run `npm i` in all subdirectories that contain `package.json`
