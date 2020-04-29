@@ -1,10 +1,11 @@
 app: fullstack
 component: website@0.0.20
 name: fullstack-site
+stage: prod
 
 inputs:
   src:
     src: ./
     hook: npm run build
     dist: build
-  domain: ${env:domain_site}
+  domain: ${env:domain}

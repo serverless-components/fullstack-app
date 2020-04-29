@@ -1,10 +1,11 @@
 app: fullstack
 component: express@1.0.3
 name: fullstack-api
+stage: prod
 
 inputs:
   src: ./
   roleName: ${output:fullstack-permissions.name}
-  domain: ${env:domain_api}
+  domain: api.${env:domain}
   env:
     db: ${output:fullstack-db.name}

@@ -23,6 +23,10 @@ app.use(function(req, res, next) {
  */
 app.post(`/leads`, leads.save)
 
+app.get(`/test`, (req, res) => {
+  res.status(200).send('Request received')
+})
+
 app.get(`/*`, (req, res) => {
   res.status(404).send('Route not found')
 })
