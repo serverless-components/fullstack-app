@@ -13,7 +13,7 @@ AWS_ACCESS_KEY_ID=JAFJ89109JASFKLJASF
 AWS_SECRET_ACCESS_KEY=AJ91J9A0SFA0S9FSKAFLASJFLJ
 ```
 
-In the root folder, run `serverless deploy --all`
+In the root folder, run `serverless deploy --all --stage prod`
 
 After initial deployment, we recommend deploying only the parts you are changing, not the entire thing together (why risk deploying your database with a code change?).  To do this, `cd` into a part of the application and run `serverless deploy`.
 
