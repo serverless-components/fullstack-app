@@ -1,0 +1,18 @@
+app: fullstack
+component: aws-dynamodb@1.0.1
+name: fullstack-db
+
+inputs:
+  name: ${name}-${stage}
+  region: us-east-1
+  deletionPolicy: retain
+  attributeDefinitions:
+    - AttributeName: hk
+      AttributeType: 'S'
+    - AttributeName: sk
+      AttributeType: 'S'
+  keySchema:
+    - AttributeName: hk
+      KeyType: HASH
+    - AttributeName: sk
+      KeyType: RANGE

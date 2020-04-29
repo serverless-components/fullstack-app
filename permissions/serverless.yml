@@ -1,0 +1,27 @@
+app: fullstack
+component: aws-iam-role@0.2.0
+name: fullstack-permissions
+
+inputs:
+  name: ${name}-${stage}
+  region: us-east-1 
+  service: lambda.amazonaws.com                     
+  policy:
+    # Marketing API Logs and Assume Role access
+    - Effect: Allow
+      Action:
+        - sts:AssumeRole
+        - logs:CreateLogGroup
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource: '*'
+    # Marketing Database access
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: ${output:fullstack-db.arn}

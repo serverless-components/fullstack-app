@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  height: 100px;
+  opacity: 0.45;
+  text-align: center;
+}
+
+.container img {
+  display: flex;
+  align-self: center;
+  height: 100%;
+  width: auto;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 0 20px 0;
+  animation-duration: 0.4s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+
+.container  p {
+  font-size: 22px;
+  color: rgba(255,255,255,0.5);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+

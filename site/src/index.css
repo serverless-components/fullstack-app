@@ -1,0 +1,81 @@
+html, body, #root {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #000;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'soleil', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
+  font-family: 'soleil', 'Helvetica Neue', sans-serif;
+}
+
+/**
+ * Buttons
+ */
+
+.buttonPrimaryLarge {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  max-width: 360px;
+  margin: 20px 0 0 0;
+  padding: 18px 20px 24px 20px;
+  background: #fd5750;
+  color: #fff;
+  font-family: 'soleil', 'Helvetica Neue', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 0px;
+  transition: all 0.18s ease;
+  user-select: none;
+  outline: none;
+  text-transform: lowercase;
+}
+
+.buttonPrimaryLarge:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.buttonPrimaryLarge:active {
+  cursor: pointer;
+  transform: scale(1);
+  outline: none;
+}
+
+/**
+ * Animations
+ */
+
+.animateFadeIn {
+  animation: fadeIn 0.35s;
+}
+
+.animateScaleIn {
+  animation: scaleIn 0.35s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8); 
+  }
+  to   { 
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
