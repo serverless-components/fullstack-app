@@ -57,11 +57,15 @@ div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
  */
 
 .animateFadeIn {
-  animation: fadeIn 0.35s;
+  animation: fadeIn 0.45s;
 }
 
 .animateScaleIn {
   animation: scaleIn 0.35s;
+}
+
+.animateFlicker {
+  animation: flicker 2.5s infinite;
 }
 
 @keyframes fadeIn {
@@ -78,4 +82,16 @@ div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
     opacity: 1;
     transform: scale(1); 
   }
+}
+
+@keyframes flicker {
+	0% {
+		opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+	100% {
+		opacity: 0.4;
+	}
 }
