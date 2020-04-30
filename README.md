@@ -1,4 +1,5 @@
-# Serverless Fullstack App
+[![Serverless Fullstack Application Express React DynamoDB AWS Lambda AWS HTTP API](https://s3.amazonaws.com/assets.github.serverless/components/readme-serverless-framework-fullstack-application.png
+)](https://www.serverless-fullstack-app.com)
 
 A complete, serverless, full-stack application built on AWS Lambda, AWS HTTP API, Express.js, React and DynamoDB.
 
