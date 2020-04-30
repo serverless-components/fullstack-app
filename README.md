@@ -20,18 +20,17 @@ In the root folder, run `serverless deploy --all --stage prod`
 
 After initial deployment, we recommend deploying only the parts you are changing, not the entire thing together (why risk deploying your database with a code change?).  To do this, `cd` into a part of the application and run `serverless deploy`.
 
-When working on the `./api` we highly recommend using `serverless dev`
+When working on the `./api` we highly recommend using `serverless dev`.  This command watches your code, auto-deploys it, and streams `console.log()` statements and errors directly to your CLI in real-time!
 
 If you want to add custom domains to your landing pages and API, either hardcode them in your `serverless.yml` or reference environment variables in `serverless.yml`, like this:
 
 ```yaml
 inputs:
-  domain: ${env:domain_api}
+  domain: ${env:domain}
 ```
 
 ```text
-domain_api=marketing-api.com
-domain_site_knative=landing-page.com
+domain=serverless-fullstack-app.com
 ```
 
 Support for stages is built in.  Simply switch the stage in `serverless.yml` like this:
@@ -62,7 +61,7 @@ name: fullstack-api
 stage: prod # Put the stage in here
 
 inputs:
-  domain: ${env:domain_api}
+  domain: api.${env:domain}
 ```
 
 
