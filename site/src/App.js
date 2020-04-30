@@ -105,7 +105,7 @@ export default class App extends Component {
             <label className={styles.formLabel}>enter your email</label>
             <input
               type='text'
-              placeholder='email'
+              placeholder='enter your email'
               className={styles.formInput}
               value={this.state.formEmail}
               onChange={(e) => { this.handleFormInput('formEmail', e.target.value) }}
@@ -137,13 +137,6 @@ export default class App extends Component {
       <div className={`${styles.container} animateFadeIn`}>
         <div className={styles.containerInner}>
 
-          { /* Logo */ }
-
-          <div className={styles.logoContainer}>
-            <img src={'./fullstack-app-hero.png'} alt='serverless-fullstack-application' />
-            
-          </div>
-
           { /* Loading */ }
 
           { this.state.loading && (
@@ -151,6 +144,21 @@ export default class App extends Component {
               { < Loading className={styles.containerLoading} /> }
             </div>
           )}
+
+          { /* Hero Artwork */ }
+
+          <div className={`${styles.heroArtwork} animateFlicker`}>
+            <img src={'./fullstack-app-artwork.png'} alt='serverless-fullstack-application' />
+          </div>
+          <div className={`${styles.heroTitle}`}>
+            <img src={'./fullstack-app-title.png'} alt='serverless-fullstack-application' />
+          </div>
+
+          { /* Hero Description */ }
+
+          <div className={`${styles.heroDescription}`}>
+            A serverless full-stack application built with AWS Lambda, AWS HTTP API, Express.js, React & AWS DynamoDB.
+          </div>
 
           { /* Email Form */ }
 
@@ -167,6 +175,17 @@ export default class App extends Component {
               Thanks, you have been successfully registered
             </div>
           )}
+
+          { /* Github Link */ }
+
+          <div className={`${styles.githubLink}`}>
+            <a 
+              href='https://github.com/serverless-components/fullstack-app'
+              target='_blank'
+              rel='noopener noreferrer'>
+              View the project on Github
+            </a>
+          </div>
 
         </div>
       </div>
