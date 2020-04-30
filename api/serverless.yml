@@ -1,5 +1,5 @@
 app: fullstack
-component: express@1.0.3
+component: express@1.0.5
 name: fullstack-api
 stage: prod
 
