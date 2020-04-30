@@ -1,5 +1,5 @@
 app: fullstack
-component: website@0.0.20
+component: website@1.0.0
 name: fullstack-site
 stage: prod
 
