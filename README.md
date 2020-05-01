@@ -16,7 +16,7 @@ AWS_ACCESS_KEY_ID=JAFJ89109JASFKLJASF
 AWS_SECRET_ACCESS_KEY=AJ91J9A0SFA0S9FSKAFLASJFLJ
 ```
 
-Make sure you are logged in.  `cd` into any othe component folders (e.g. `api`, `site`, etc.) and run `sls login`.
+Make sure you are logged in.  `cd` into any component folders (e.g. `api`, `site`, etc.) and run `sls login`.
 
 In the root folder of the project, run `serverless deploy --all --stage prod`
 
