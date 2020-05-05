@@ -108,14 +108,6 @@ class Auth extends Component {
     window.location.replace('/')
   }
 
-  renderLoading() {
-    return (
-      <div>
-        { < Loading className={styles.containerLoading} /> }
-      </div>
-    )
-  }
-
   render() {
 
     return (
@@ -190,21 +182,11 @@ class Auth extends Component {
                   <div className={styles.formError}>{this.state.formError}</div>
                 )}
 
-
-                { this.state.loading ? (
-                  <input 
-                    className={`buttonPrimaryLarge ${styles.formButton}`} 
-                    type='submit' 
-                    value='Loading'
-                    disabled='true' 
-                  />
-                ) : (
-                  <input 
-                    className={`buttonPrimaryLarge ${styles.formButton}`} 
-                    type='submit' 
-                    value='Loading' 
-                  />
-                )}
+                <input 
+                  className={`buttonPrimaryLarge ${styles.formButton}`} 
+                  type='submit' 
+                  value='Loading' 
+                />
 
               </form>
             </div>

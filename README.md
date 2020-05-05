@@ -77,5 +77,4 @@ And deploy!
 
 `serverless deploy --stage prod`
 
-
 Enjoy!  This is a work in progress and we will continue to add funcitonality to this.
