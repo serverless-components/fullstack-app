@@ -78,3 +78,13 @@ And deploy!
 `serverless deploy --stage prod`
 
 Enjoy!  This is a work in progress and we will continue to add funcitonality to this.
+
+## Other Resources
+
+For more details on each part of this fullstack application, check out these resources:
+
+* [Serverless Components](https://github.com/serverless/components)
+* [Serverless Express](https://github.com/serverless-components/express)
+* [Serverless Website](https://github.com/serverless-components/website)
+* [Serverless AWS DynamoDB](https://github.com/serverless-components/aws-dynamodb)
+* [Serverless AWS IAM Role](https://github.com/serverless-components/aws-iam-role)
