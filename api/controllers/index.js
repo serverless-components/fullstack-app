@@ -1,5 +1,5 @@
-const leads = require('./leads')
+const users = require('./users')
 
 module.exports = {
-  leads,
+  users,
 }

@@ -1,13 +1,16 @@
 const express = require('express')
 const app = express()
-const { leads } = require('./controllers')
+const passport = require('passport')
+const {
+  users
+} = require('./controllers')
+
+// Configure Passport
+require('./config/passport')(passport)
 
 /**
- * Middleware
+ * Configure Express.js Middleware
  */
-
-// Enable JSON use
-app.use(express.json())
 
 // Enable CORS
 app.use(function(req, res, next) {
@@ -18,10 +21,26 @@ app.use(function(req, res, next) {
   next()
 })
 
+// Initialize Passport and restore authentication state, if any, from the session
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Enable JSON use
+app.use(express.json())
+
 /**
  * Routes
  */
-app.post(`/leads`, leads.save)
+
+app.options(`*`, (req, res) => {
+  res.status(200).send()
+})
+
+app.post(`/users/register`, users.register)
+
+app.post(`/users/login`, users.login)
+
+app.post(`/user`, passport.authenticate('jwt', { session: false }), users.get)
 
 app.get(`/test`, (req, res) => {
   res.status(200).send('Request received')
@@ -29,10 +48,6 @@ app.get(`/test`, (req, res) => {
 
 app.get(`/*`, (req, res) => {
   res.status(404).send('Route not found')
-})
-
-app.options(`*`, (req, res) => {
-  res.status(200).send()
 })
 
 /**

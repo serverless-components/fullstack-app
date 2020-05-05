@@ -1,7 +1,6 @@
 app: fullstack
-component: aws-iam-role@1.0.0
+component: aws-iam-role@2.0.0
 name: fullstack-permissions
-stage: prod
 
 inputs:
   name: ${name}-${stage}
@@ -25,4 +24,6 @@ inputs:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: ${output:fullstack-db.arn}
+      Resource: 
+        - ${output:fullstack-db.arn}
+        - ${output:fullstack-db.arn}/index/*

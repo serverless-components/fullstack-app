@@ -1,7 +1,6 @@
 app: fullstack
 component: express@1.0.5
 name: fullstack-api
-stage: prod
 
 inputs:
   src: ./
@@ -9,3 +8,5 @@ inputs:
   domain: api.${env:domain}
   env:
     db: ${output:fullstack-db.name}
+    dbIndex1: ${output:fullstack-db.indexes.gsi1.name}
+    tokenSecret: ${env:tokenSecret}

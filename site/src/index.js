@@ -9,8 +9,12 @@ import './index.css'
 
 window.serverless = {}
 window.serverless.urls = {}
-window.serverless.root = window.location.hostname.replace('www.', '')
-window.serverless.urls.api = `https://api.${window.serverless.root}`
+if (window.location.host.includes('localhost:')) {
+  window.serverless.urls.api = `https://api.serverless-fullstack-app-dev.com`
+} else {
+  window.serverless.root = window.location.hostname.replace('www.', '')
+  window.serverless.urls.api = `https://api.${window.serverless.root}`
+}
 
 /**
  * Render App

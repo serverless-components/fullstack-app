@@ -1,194 +1,58 @@
 import React, { Component } from 'react'
-import Loading from './fragments/Loading'
-import styles from './App.module.css'
-import { requestApi } from './utils'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom'
+import Home from './pages/Home/Home'
+import Auth from './pages/Auth/Auth'
+import Dashboard from './pages/Dashboard/Dashboard'
+import { getSession } from './utils'
 
 export default class App extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
-    this.state.state = 'form'
-    this.state.loading = true
-    this.state.error = null
-    this.state.formEmail = ''
-
-    // Bindings
-    this.handleFormInput = this.handleFormInput.bind(this)
-    this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
-  /**
-   * Component did mount
-   */
   async componentDidMount() {
-    // Parse Query Params
-    this.queryData = new URLSearchParams(window.location.search)
-
-    this.state.campaign = this.queryData.get('campaign')
-    this.state.source = this.queryData.get('source')
-    this.state.medium = this.queryData.get('medium')
-
-    this.setState({
-      campaign: this.queryData.get('campaign'),
-      source: this.queryData.get('source'),
-      medium: this.queryData.get('medium'),
-      loading: false 
-    })
-
-    // Clear query params
-    const url = document.location.href
-    window.history.pushState({}, '', url.split('?')[0])
-  }
-
-  /**
-   * Handle text changes within form fields
-   */
-  handleFormInput(field, value) {
-    value = value.trim()
-    
-    const nextState = {}
-    nextState[field] = value
-
-    this.setState(Object.assign(this.state, nextState))
-  }
-
-  /**
-   * Handles form submission
-   * @param {object} evt 
-   */
-  async handleFormSubmit(evt) {
-    evt.preventDefault()
-
-    // Validate email
-    if (!this.state.formEmail) {
-      return this.setState({ formError: 'email is required' })
-    }
-
-    try {
-      await requestApi(
-        '/leads',
-        'POST',
-        {
-          email: this.state.formEmail
-        })
-    } catch (error) {
-      if (error.message) {
-        this.setState({ formError: error.message })
-      } else {
-        this.setState({ formError: 'Sorry, something unknown went wrong.  Please try again.' })
-      }
-      return
-    }
-
-    this.setState({ 
-      state: 'success',
-      formError: null 
-    })
-  }
-
-  /**
-   * Render a loading view
-   */
-  renderLoading() {
-    return <Loading className={styles.loading} />
-  }
-
-  /**
-   * Render Email Field
-   */
-  renderEmailForm() {
-    return (
-      <div>
-        <form className={styles.form} onSubmit={this.handleFormSubmit}>
-          <div className={styles.formField}>
-            <label className={styles.formLabel}>enter your email</label>
-            <input
-              type='text'
-              placeholder='enter your email'
-              className={styles.formInput}
-              value={this.state.formEmail}
-              onChange={(e) => { this.handleFormInput('formEmail', e.target.value) }}
-            />
-          </div>
-
-          {this.state.formError && (
-            <div className={styles.formError}>{this.state.formError}</div>
-          )}
-
-          <input className={`buttonPrimaryLarge ${styles.formButton}`} type='submit' value='enter' />
-
-        </form>
-      </div>
-    )
+    // console.log(getSession())
   }
 
   render() {
-
-    /**
-     * Loading
-     */
-
-    if (this.state.loading) {
-      return this.renderLoading()
-    }
-
     return (
-      <div className={`${styles.container} animateFadeIn`}>
-        <div className={styles.containerInner}>
+      <Router>
+        <Switch>
 
-          { /* Loading */ }
+          <Route path='/register'>
+            <Auth />
+          </Route>
 
-          { this.state.loading && (
-            <div>
-              { < Loading className={styles.containerLoading} /> }
-            </div>
-          )}
+          <Route path='/login'>
+            <Auth />
+          </Route>
 
-          { /* Hero Artwork */ }
+          <PrivateRoute
+            exact
+            path='/'
+            component={Dashboard}
+          />
 
-          <div className={`${styles.heroArtwork} animateFlicker`}>
-            <img src={'./fullstack-app-artwork.png'} alt='serverless-fullstack-application' />
-          </div>
-          <div className={`${styles.heroTitle}`}>
-            <img src={'./fullstack-app-title.png'} alt='serverless-fullstack-application' />
-          </div>
-
-          { /* Hero Description */ }
-
-          <div className={`${styles.heroDescription}`}>
-            A serverless full-stack application built with AWS Lambda, AWS HTTP API, Express.js, React & AWS DynamoDB.
-          </div>
-
-          { /* Email Form */ }
-
-          { !this.state.loading && this.state.state === 'form' && (
-            <div>
-              { this.renderEmailForm() }
-            </div>
-          )}
-
-          { /* Success Message */ }
-
-          { !this.state.loading && this.state.state === 'success' && (
-            <div className={styles.success}>
-              Thanks, you have been successfully registered
-            </div>
-          )}
-
-          { /* Github Link */ }
-
-          <div className={`${styles.githubLink}`}>
-            <a 
-              href='https://github.com/serverless-components/fullstack-app'
-              target='_blank'
-              rel='noopener noreferrer'>
-              View the project on Github
-            </a>
-          </div>
-
-        </div>
-      </div>
+        </Switch>
+      </Router>
     )
   }
+}
+
+/**
+ * A component to protect routes.
+ * Shows Auth page if the user is not authenticated
+ */
+const PrivateRoute = ({ component, ...options }) => {
+
+  const session = getSession()
+
+  const finalComponent = session ? Dashboard : Home
+  return <Route {...options} component={finalComponent} />
 }

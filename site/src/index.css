@@ -7,14 +7,39 @@ html, body, #root {
   background: #000;
   color: #ffffff;
   margin: 0;
-  font-family: 'soleil', 'Helvetica Neue', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
-  font-family: 'soleil', 'Helvetica Neue', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/**
+ * Links
+ */
+
+a, .link {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: all 0.14s ease;
+}
+
+a:hover, .link:hover {
+  cursor: pointer;
+  color: rgba(255,255,255,1);
+}
+
+a:active, .link:active {
+  color: rgba(255,255,255,0.6);
 }
 
 /**
@@ -26,16 +51,17 @@ div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
   font-size: 18px;
   width: 100%;
   max-width: 360px;
+  height: auto;
   margin: 20px 0 0 0;
-  padding: 18px 20px 24px 20px;
+  padding: 24px 24px 28px 24px;
   background: #fd5750;
   color: #fff;
-  font-family: 'soleil', 'Helvetica Neue', sans-serif;
-  font-size: 22px;
-  font-weight: 500;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
   border-radius: 4px;
   border: 0px;
-  transition: all 0.18s ease;
+  transition: all 0.14s ease;
   user-select: none;
   outline: none;
   text-transform: lowercase;
@@ -86,12 +112,12 @@ div, h1, h2, h3, h4, h5, h6, p, span, input, button, li {
 
 @keyframes flicker {
 	0% {
-		opacity: 0.4;
+		opacity: 0.3;
   }
   50% {
     opacity: 1;
   }
 	100% {
-		opacity: 0.4;
+		opacity: 0.3;
 	}
 }

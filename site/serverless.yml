@@ -1,7 +1,6 @@
 app: fullstack
 component: website@1.0.0
 name: fullstack-site
-stage: prod
 
 inputs:
   src:

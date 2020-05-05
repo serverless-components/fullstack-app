@@ -31,22 +31,7 @@
   padding: 160px 0 0 0;
 }
 
-.column {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  height: 100%;
-  width: 50%;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.heroArtwork {
+.logo {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -55,39 +40,13 @@
   width: 100%;
 }
 
-.heroArtwork img {
+.logo img {
   width: auto;
   height: auto;
   align-self: center;
   max-height: 100%;
-  max-width: 500px;
+  max-width: 400px;
   user-select: none;
-}
-
-.heroTitle {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  align-content: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.heroTitle img {
-  width: auto;
-  height: auto;
-  align-self: center;
-  max-height: 100%;
-  max-width: 500px;
-  user-select: none;
-}
-
-.heroDescription {
-  display: flex;
-  text-align: center;
-  font-size: 18px;
-  line-height: 30px;
-  margin: 10px 0 32px 0px;
 }
 
 .error {
@@ -119,73 +78,10 @@
 
 .containerSignIn {}
 
-.socialButtons {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-  margin: 15px auto 0px auto;
-  width: 100%;
-}
-
-.buttonGithub {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  box-sizing: border-box;
-  margin: 0 auto 10px auto;
-  width: 100%;
-  padding: 12px;
-  border-radius: 4px;
-  font-size: 19px;
-  font-weight: 500;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-  text-transform: lowercase;
-}
-
-.buttonGithub:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.buttonGithub img {
-  max-height: 28px;
-  margin-right: 13px;
-  margin-top: 1.5px;
-}
-
-.buttonGoogle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 12px;
-  border-radius: 4px;
-  font-size: 19px;
-  font-weight: 500;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-  text-transform: lowercase;
-}
-
-.buttonGoogle:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.buttonGoogle img {
-  max-height: 25px;
-  margin-right: 11px;
-  margin-top: 3px;
-}
-
 .formType {
   display: flex;
   flex-direction: row;
-  margin: 0px auto 0px auto;
+  margin: 26px auto 0px auto;
   width: 100%;
   padding: 10px 0;
   font-size: 22px;
@@ -200,6 +96,7 @@
   padding: 5px 40px 5px 0;
   justify-content: flex-end;
   border-right: 2px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
 }
 
 .formTypeRegister:hover {
@@ -211,6 +108,7 @@
   width: 50%;
   padding: 5px 0 5px 40px;
   text-align: left;
+  color: rgba(255,255,255,0.6);
 }
 
 .formTypeSignIn:hover {

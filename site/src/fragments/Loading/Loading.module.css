@@ -23,6 +23,11 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease;
+  filter: none;
+  -webkit-filter: grayscale(100%);
+  -moz-filter:    grayscale(100%);
+  -ms-filter:     grayscale(100%);
+  -o-filter:      grayscale(100%);
 }
 
 .container  p {
@@ -36,7 +41,7 @@
   }
 
   to {
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 }
 

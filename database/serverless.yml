@@ -1,7 +1,6 @@
 app: fullstack
-component: aws-dynamodb@1.0.1
+component: aws-dynamodb@1.1.1
 name: fullstack-db
-stage: prod
 
 inputs:
   name: ${name}-${stage}
@@ -9,11 +8,22 @@ inputs:
   deletionPolicy: retain
   attributeDefinitions:
     - AttributeName: hk
-      AttributeType: 'S'
+      AttributeType: S
     - AttributeName: sk
-      AttributeType: 'S'
+      AttributeType: S
+    - AttributeName: sk2
+      AttributeType: S
   keySchema:
     - AttributeName: hk
       KeyType: HASH
     - AttributeName: sk
       KeyType: RANGE
+  globalSecondaryIndexes:
+    - IndexName: gsi1
+      KeySchema:
+        - AttributeName: sk2
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      Projection:
+        ProjectionType: ALL

@@ -4,7 +4,12 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {},
   "scripts": {

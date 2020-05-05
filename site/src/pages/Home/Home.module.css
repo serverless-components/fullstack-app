@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.containerInner {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  max-width: 700px;
+  padding: 50px 15px 30px 15px;
+}
+
+.heroArtwork {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroArtwork img {
+  width: auto;
+  height: auto;
+  align-self: center;
+  max-height: 100%;
+  max-width: 500px;
+  user-select: none;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.heroTitle img {
+  width: auto;
+  height: auto;
+  align-self: center;
+  max-height: 100%;
+  max-width: 500px;
+  user-select: none;
+}
+
+.heroDescription {
+  display: flex;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 38px;
+  margin: 32px 0px 52px 0;
+}
+
+.containerCta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.containerCta button {
+  margin: 0px auto 20px auto;
+}
+
+.containerCta .linkSignIn {
+  padding: 10px;
+  color: #fd5750;
+  opacity: 0.65;
+}
+
+.containerCta .linkSignIn:hover {
+  opacity: 1;
+}
+
+/**
+ * Special
+ */
+
+::-moz-selection { 
+  background: #fd5750; 
+  color: #ffffff;
+  opacity: 1;
+}
+
+::selection { 
+  background: #fd5750; 
+  color: #ffffff;
+  opacity: 1;
+}
