@@ -7,6 +7,8 @@ A complete, serverless, full-stack application built on AWS Lambda, AWS HTTP API
 
 ## Quick Start
 
+Clone this repo.
+
 Run `npm i` in all subdirectories that contain `package.json`
 
 Add your AWS credentials in `.env` file in the root directory, like this:
