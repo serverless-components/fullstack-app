@@ -185,7 +185,7 @@ class Auth extends Component {
                 <input 
                   className={`buttonPrimaryLarge ${styles.formButton}`} 
                   type='submit' 
-                  value='Loading' 
+                  value='Register' 
                 />
 
               </form>

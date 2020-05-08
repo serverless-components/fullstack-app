@@ -7,4 +7,4 @@ inputs:
     src: ./
     hook: npm run build
     dist: build
-  domain: ${env:domain}
+  # domain: ${env:domain} Uncomment this when you want to use a custom domain
