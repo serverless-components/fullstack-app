@@ -11,9 +11,14 @@
     "passport-jwt": "^4.0.0",
     "shortid": "^2.2.15"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && webpack --config ./webpack.config.js --progress --profile --colors"
   },
   "author": "",
   "license": "ISC"

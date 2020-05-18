@@ -3,7 +3,10 @@ component: express@1.0.8
 name: fullstack-api
 
 inputs:
-  src: ./
+  src:
+    src: ./src
+    hook: npm run build
+    dist: ./dist
   roleName: ${output:fullstack-permissions.name}
   domain: api.${env:domain}
   env:
