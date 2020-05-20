@@ -5,9 +5,9 @@ import {
 } from 'react-router-dom'
 import Loading from '../../fragments/Loading'
 import styles from './Auth.module.css'
-import { 
+import {
   userRegister,
-  userLogin, 
+  userLogin,
   userGet,
   saveSession,
 } from '../../utils'
@@ -17,7 +17,7 @@ class Auth extends Component {
   constructor(props) {
     super(props)
 
-    const pathName = window.location.pathname.replace('/','')
+    const pathName = window.location.pathname.replace('/', '')
 
     this.state = {}
     this.state.state = pathName
@@ -37,7 +37,7 @@ class Auth extends Component {
    */
   componentDidMount() {
     this.setState({
-      loading: false 
+      loading: false
     })
 
     // Clear query params
@@ -49,7 +49,7 @@ class Auth extends Component {
    * Handles a form change
    */
   handleFormTypeChange(type) {
-    this.setState({ state: type }, 
+    this.setState({ state: type },
       () => {
         this.props.history.push(`/${type}`)
       })
@@ -92,9 +92,9 @@ class Auth extends Component {
       if (error.message) {
         this.setState({ formError: error.message, loading: false })
       } else {
-        this.setState({ 
-          formError: 'Sorry, something unknown went wrong.  Please try again.', 
-          loading: false 
+        this.setState({
+          formError: 'Sorry, something unknown went wrong.  Please try again.',
+          loading: false
         })
       }
       return
@@ -114,38 +114,38 @@ class Auth extends Component {
       <div className={`${styles.container} animateFadeIn`}>
         <div className={styles.containerInner}>
 
-          { /* Logo */ }
+          { /* Logo */}
 
           <Link to='/' className={`${styles.logo}`}>
-            <img 
+            <img
               draggable='false'
-              src={'./fullstack-app-title.png'} 
-              alt='serverless-fullstack-application' 
+              src={'./fullstack-app-title.png'}
+              alt='serverless-fullstack-application'
             />
           </Link>
 
-          { /* Loading */ }
+          { /* Loading */}
 
-          { this.state.loading && (
+          {this.state.loading && (
             <div>
-              { < Loading className={styles.containerLoading} /> }
+              {< Loading className={styles.containerLoading} />}
             </div>
           )}
 
-          { /* Registration Form */ }
-          
-          { !this.state.loading && (
+          { /* Registration Form */}
+
+          {!this.state.loading && (
             <div className={styles.formType}>
-              <div 
+              <div
                 className={
-                `${styles.formTypeRegister} 
+                  `${styles.formTypeRegister} 
                 ${this.state.state === 'register' ? styles.formTypeActive : ''}`}
                 onClick={(e) => { this.handleFormTypeChange('register') }}>
                 Register
               </div>
-              <div 
+              <div
                 className={
-                `${styles.formTypeSignIn} 
+                  `${styles.formTypeSignIn} 
                 ${this.state.state === 'login' ? styles.formTypeActive : ''}`}
                 onClick={(e) => { this.handleFormTypeChange('login') }}>
                 Sign-In
@@ -153,7 +153,7 @@ class Auth extends Component {
             </div>
           )}
 
-          { this.state.state === 'register' && !this.state.loading && (
+          {this.state.state === 'register' && !this.state.loading && (
             <div className={styles.containerRegister}>
 
               <form className={styles.form} onSubmit={this.handleFormSubmit}>
@@ -182,19 +182,19 @@ class Auth extends Component {
                   <div className={styles.formError}>{this.state.formError}</div>
                 )}
 
-                <input 
-                  className={`buttonPrimaryLarge ${styles.formButton}`} 
-                  type='submit' 
-                  value='Loading' 
+                <input
+                  className={`buttonPrimaryLarge ${styles.formButton}`}
+                  type='submit'
+                  value='Loading'
                 />
 
               </form>
             </div>
           )}
 
-          { this.state.state === 'login' && !this.state.loading && (
+          {this.state.state === 'login' && !this.state.loading && (
             <div className={styles.containerSignIn}>
-            
+
               <form className={styles.form} onSubmit={this.handleFormSubmit}>
                 <div className={styles.formField}>
                   <label className={styles.formLabel}>email</label>

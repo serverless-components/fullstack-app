@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { 
+import {
   Link,
-  withRouter 
+  withRouter
 } from 'react-router-dom'
 import styles from './Home.module.css'
 
@@ -12,7 +12,7 @@ class Home extends Component {
     this.state = {}
   }
 
-  async componentDidMount() {}
+  async componentDidMount() { }
 
   render() {
 
@@ -20,30 +20,30 @@ class Home extends Component {
       <div className={`${styles.container} animateFadeIn`}>
         <div className={styles.containerInner}>
 
-          { /* Hero Artwork */ }
+          { /* Hero Artwork */}
 
           <div className={`${styles.heroArtwork} animateFlicker`}>
-            <img 
+            <img
               draggable='false'
-              src={'./fullstack-app-artwork.png'} 
-              alt='serverless-fullstack-application' 
+              src={'./fullstack-app-artwork.png'}
+              alt='serverless-fullstack-application'
             />
           </div>
           <div className={`${styles.heroTitle}`}>
-            <img 
+            <img
               draggable='false'
-              src={'./fullstack-app-title.png'} 
-              alt='serverless-fullstack-application' 
+              src={'./fullstack-app-title.png'}
+              alt='serverless-fullstack-application'
             />
           </div>
 
-          { /* Hero Description */ }
+          { /* Hero Description */}
 
           <div className={`${styles.heroDescription}`}>
             A serverless full-stack application built with AWS Lambda, AWS HTTP API, Express.js, React & AWS DynamoDB.
           </div>
 
-          { /* Call To Action */ }
+          { /* Call To Action */}
 
           <div className={`${styles.containerCta}`}>
 
