@@ -13,7 +13,7 @@ require('./config/passport')(passport)
  */
 
 // Enable CORS
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', '*')
   res.header('Access-Control-Allow-Headers', '*')
@@ -43,7 +43,7 @@ app.post(`/users/login`, users.login)
 app.post(`/user`, passport.authenticate('jwt', { session: false }), users.get)
 
 app.get(`/test`, (req, res) => {
-  res.status(200).send('Request received')
+  res.status(200).send('Experimental code!')
 })
 
 app.get(`/*`, (req, res) => {

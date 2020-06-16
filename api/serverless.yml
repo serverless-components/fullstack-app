@@ -1,11 +1,15 @@
 app: fullstack
-component: express@1.0.8
 name: fullstack-api
+component: express@1.0.10
 
 inputs:
-  src: ./
+  src: 
+    src: ./
+    hook: export NODE_ENV=development && npm run build
+    dist: ./dist
   roleName: ${output:fullstack-permissions.name}
   domain: api.${env:domain}
+  memory: 512
   env:
     db: ${output:fullstack-db.name}
     dbIndex1: ${output:fullstack-db.indexes.gsi1.name}
