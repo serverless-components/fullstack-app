@@ -25,7 +25,7 @@ domain=serverless-fullstack-app.com
 
 In the root folder of the project, run `serverless deploy --all`
 
-Lastly, you will need to update the URL in the `site` so that you interact with the correct API endpoint.  Take the `/api` `url` and put it in the site React app [here](./site/index.js).
+Lastly, you will need to update the URL in the `site` so that you interact with the correct API endpoint.  Take the `/api` `url` and put it in the site React app [here](./site/src/index.js).
 
 Note:  Upon the first deployment of your website, it will take a 2-3 minutes for the Cloudfront (CDN) URL to work.  Until then, you can access it via the `bucketUrl`.
 
