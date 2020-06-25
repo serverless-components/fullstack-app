@@ -43,7 +43,8 @@ app.post(`/users/login`, users.login)
 app.post(`/user`, passport.authenticate('jwt', { session: false }), users.get)
 
 app.get(`/test`, (req, res) => {
-  res.status(200).send('Request received')
+  console.log('this is a real-time streaming log')
+  res.status(200).send('Route updated')
 })
 
 app.get(`/*`, (req, res) => {

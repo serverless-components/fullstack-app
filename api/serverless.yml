@@ -5,7 +5,7 @@ name: fullstack-api
 inputs:
   src: ./
   roleName: ${output:fullstack-permissions.name}
-  domain: api.${env:domain}
+  # domain: api.${env:domain} Uncomment this when you want to use a custom domain
   env:
     db: ${output:fullstack-db.name}
     dbIndex1: ${output:fullstack-db.indexes.gsi1.name}

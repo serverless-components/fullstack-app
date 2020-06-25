@@ -20,7 +20,7 @@ module.exports = (passport) => {
       console.log(error)
       return done(error, null) 
     }
-    console.log(user)
+
     if (!user) { return done(null, false) }
     return done(null, user)
   }))
