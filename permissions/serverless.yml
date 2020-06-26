@@ -7,7 +7,7 @@ inputs:
   region: us-east-1 
   service: lambda.amazonaws.com                     
   policy:
-    # Marketing API Logs and Assume Role access
+    # AWS Lambda function containing Express Logs and Assume Role access
     - Effect: Allow
       Action:
         - sts:AssumeRole
@@ -15,7 +15,7 @@ inputs:
         - logs:CreateLogStream
         - logs:PutLogEvents
       Resource: '*'
-    # Marketing Database access
+    # AWS DynamoDB Table access
     - Effect: Allow
       Action:
         - dynamodb:DescribeTable

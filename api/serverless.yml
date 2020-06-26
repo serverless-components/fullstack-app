@@ -3,11 +3,19 @@ component: express@1.1.0
 name: fullstack-api
 
 inputs:
+  # Express application source code.
   src: ./
+  # Permissions required for the AWS Lambda function to interact with other resources
   roleName: ${output:fullstack-permissions.name}
-  domain: api.${env:domain}
+  # Enable this when you want to set a custom domain.
+  # domain: api.${env:domain}
+  # Leaving this on auto-generates an OpenAPI spec each time this is deployed.
   inference: true
+  # Environment variables
   env:
+    # AWS DynamoDB Table name. Needed for the code to access it.
     db: ${output:fullstack-db.name}
+    # AWS DynamoDB Table Index name. Needed for the code to access it.
     dbIndex1: ${output:fullstack-db.indexes.gsi1.name}
+    # A secret token to sign the JWT tokens with.
     tokenSecret: ${env:tokenSecret}

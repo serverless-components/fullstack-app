@@ -5,6 +5,7 @@ name: fullstack-db
 inputs:
   name: ${name}-${stage}
   region: us-east-1
+  # Don't delete the Database Table if "serverless remove" is run
   deletionPolicy: retain
   attributeDefinitions:
     - AttributeName: hk
