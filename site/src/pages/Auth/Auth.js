@@ -182,17 +182,10 @@ class Auth extends Component {
                   <div className={styles.formError}>{this.state.formError}</div>
                 )}
 
-<<<<<<< HEAD
                 <input
                   className={`buttonPrimaryLarge ${styles.formButton}`}
                   type='submit'
-                  value='Loading'
-=======
-                <input 
-                  className={`buttonPrimaryLarge ${styles.formButton}`} 
-                  type='submit' 
-                  value='Register' 
->>>>>>> master
+                  value='Register'
                 />
 
               </form>
