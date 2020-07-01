@@ -1,6 +1,6 @@
 app: fullstack
 component: aws-iam-role@2.0.0
-name: fullstack-permissions
+name: permissions
 
 inputs:
   name: ${name}-${stage}
