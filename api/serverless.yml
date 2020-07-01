@@ -1,5 +1,5 @@
 app: fullstack
-component: express@1.1.0
+component: express@1.2.0
 name: fullstack-api
 
 inputs:
