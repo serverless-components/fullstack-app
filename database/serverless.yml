@@ -7,6 +7,7 @@ inputs:
   region: us-east-1
   # Don't delete the Database Table if "serverless remove" is run
   deletionPolicy: retain
+  # Simple, single-table design
   attributeDefinitions:
     - AttributeName: hk
       AttributeType: S
