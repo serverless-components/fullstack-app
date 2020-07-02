@@ -25,5 +25,5 @@ inputs:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: 
-        - ${output:fullstack-db.arn}
-        - ${output:fullstack-db.arn}/index/*
+        - ${output:database.arn}
+        - ${output:database.arn}/index/*
