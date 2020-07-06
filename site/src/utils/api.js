@@ -2,6 +2,8 @@
  * Utils: Back-end
  */
 
+import config from '../config'
+
 /**
  * Register a new user
  */
@@ -20,7 +22,7 @@ export const userLogin = async (email, password) => {
  * userGet
  */
 export const userGet = async (token) => {
-  return await requestApi('/user', 'POST', null, { 
+  return await requestApi('/user', 'POST', null, {
     Authorization: `Bearer ${token}`
   })
 }
@@ -29,16 +31,21 @@ export const userGet = async (token) => {
  * API request to call the backend
  */
 export const requestApi = async (
-  path = '', 
+  path = '',
   method = 'GET',
   data = null,
   headers = {}) => {
+
+  // Check if API URL has been set
+  if (!config?.domains?.api) {
+    throw new Error(`Error: Missing API Domain – Please add the API domain from your serverless Express.js back-end to this front-end application.  You can do this in the "./config.js" file.  Instructions are listed there and in the documentation.`)
+  }
 
   // Prepare URL
   if (!path.startsWith('/')) {
     path = `/${path}`
   }
-  const url = `${window.serverless.urls.api}${path}`
+  const url = `${config.domains.api}${path}`
 
   // Set headers
   headers = Object.assign(

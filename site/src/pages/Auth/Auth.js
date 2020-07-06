@@ -78,7 +78,18 @@ class Auth extends Component {
 
     // Validate email
     if (!this.state.formEmail) {
-      return this.setState({ formError: 'email is required' })
+      return this.setState({
+        loading: false,
+        formError: 'email is required'
+      })
+    }
+
+    // Validate password
+    if (!this.state.formPassword) {
+      return this.setState({
+        loading: false,
+        formError: 'password is required'
+      })
     }
 
     let token
@@ -89,8 +100,12 @@ class Auth extends Component {
         token = await userLogin(this.state.formEmail, this.state.formPassword)
       }
     } catch (error) {
+      console.log(error)
       if (error.message) {
-        this.setState({ formError: error.message, loading: false })
+        this.setState({
+          formError: error.message,
+          loading: false
+        })
       } else {
         this.setState({
           formError: 'Sorry, something unknown went wrong.  Please try again.',

@@ -17,20 +17,18 @@ Add your AWS credentials in `.env` file in the root directory, like this:
 AWS_ACCESS_KEY_ID=JAFJ89109JASFKLJASF
 AWS_SECRET_ACCESS_KEY=AJ91J9A0SFA0S9FSKAFLASJFLJ
 
+# This signs you JWT tokens used for auth.  Enter a random string in here that's ~40 characters in length.
 tokenSecret=yourSecretKey
 
 # Only add this if you want a custom domain.  Purchase it on AWS Route53 in your target AWS account first.
 domain=serverless-fullstack-app.com
 ```
 
-In the root folder of the project, run `serverless deploy --all`
+In the root folder of the project, run `serverless deploy`
 
-Lastly, you will need to update the URL in the `site` so that you interact with the correct API endpoint.  Take the `/api` `url` and put it in the site React app [here](./site/src/index.js).
+Lastly, you will need to add your API domain manually to your React application in `./site/src/config.js`, so that you interact with your serverless Express.js back-end.  You can find the your API url by going into `./api` and running `serverless info` and copying the `url:` value.  It should look something like this `https://9jfalnal19.execute-api.us-east-1.amazonaws.com` or it will look like the custom domain you have set.
 
-Note:  Upon the first deployment of your website, it will take a 2-3 minutes for the Cloudfront (CDN) URL to work.  Until then, you can access it via the `bucketUrl`.
-
-
-
+**Note:**  Upon the first deployment of your website, it will take a 2-3 minutes for the Cloudfront (CDN) URL to work.  Until then, you can access it via the `bucketUrl`.
 
 After initial deployment, we recommend deploying only the parts you are changing, not the entire thing together (why risk deploying your database with a code change?).  To do this, `cd` into a part of the application and run `serverless deploy`.
 
@@ -52,7 +50,6 @@ Support for stages is built in.
 You can deploy everything or individual components to different stages via the `--stage` flag, like this:
  
 `serverless deploy --stage prod`
-`serverless deploy --all --stage prod`
 
 Or, you can hardcode the stage in `serverless.yml` (not recommended):
 
