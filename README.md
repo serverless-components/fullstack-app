@@ -7,11 +7,21 @@ A complete, serverless, full-stack application built on AWS Lambda, AWS HTTP API
 
 ## Quick Start
 
-Clone this repo.
+Install the latest version of the Serverless Framework:
 
-Run `npm i` in all subdirectories that contain `package.json`
 
-Add your AWS credentials in `.env` file in the root directory, like this:
+```
+npm i -g serverless
+```
+
+Then, initialize the `fullstack-app` template:
+
+```
+serverless init fullstack-app
+cd fullstack-app
+```
+
+Then, add your AWS credentials in the `.env` file in the root directory, like this:
 
 ```text
 AWS_ACCESS_KEY_ID=JAFJ89109JASFKLJASF
