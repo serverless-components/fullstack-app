@@ -1,5 +1,5 @@
 app: fullstack
-component: website@1.0.3
+component: website
 name: site
 
 inputs:

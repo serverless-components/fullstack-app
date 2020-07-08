@@ -1,5 +1,5 @@
 app: fullstack
-component: aws-dynamodb@1.1.1
+component: aws-dynamodb
 name: database
 
 inputs:
