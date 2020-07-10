@@ -54,7 +54,7 @@ app.post(`/users/register`, users.register)
 app.post(`/users/login`, users.login)
 
 app.get(`/test/`, (req, res) => {
-  res.status(200).send('Route updated')
+  res.status(200).send('Request received')
 })
 
 /**
