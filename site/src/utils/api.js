@@ -38,7 +38,7 @@ export const requestApi = async (
 
   // Check if API URL has been set
   if (!config?.domains?.api) {
-    throw new Error(`Error: Missing API Domain – Please add the API domain from your serverless Express.js back-end to this front-end application.  You can do this in the "./config.js" file.  Instructions are listed there and in the documentation.`)
+    throw new Error(`Error: Missing API Domain – Please add the API domain from your serverless Express.js back-end to this front-end application.  You can do this in the "site" folder, in the "./config.js" file.  Instructions are listed there and in the documentation.`)
   }
 
   // Prepare URL

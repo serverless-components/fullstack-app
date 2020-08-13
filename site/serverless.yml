@@ -1,6 +1,6 @@
-app: fullstack
 component: website
 name: site
+app: fullstack
 
 inputs:
   # React application. "hook" runs before deployment to build the source code.  "dist" is the built artifact directory which is uploaded.

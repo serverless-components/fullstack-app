@@ -1,11 +1,11 @@
-app: fullstack
 component: aws-iam-role
 name: permissions
+app: fullstack
 
 inputs:
   name: ${name}-${stage}
-  region: us-east-1 
-  service: lambda.amazonaws.com                     
+  region: us-east-1
+  service: lambda.amazonaws.com
   policy:
     # AWS Lambda function containing Express Logs and Assume Role access
     - Effect: Allow
@@ -14,7 +14,7 @@ inputs:
         - logs:CreateLogGroup
         - logs:CreateLogStream
         - logs:PutLogEvents
-      Resource: '*'
+      Resource: "*"
     # AWS DynamoDB Table access
     - Effect: Allow
       Action:
@@ -24,6 +24,6 @@ inputs:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: 
+      Resource:
         - ${output:database.arn}
         - ${output:database.arn}/index/*

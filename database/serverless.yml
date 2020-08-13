@@ -1,6 +1,6 @@
-app: fullstack
 component: aws-dynamodb
 name: database
+app: fullstack
 
 inputs:
   name: ${name}-${stage}
