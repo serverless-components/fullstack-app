@@ -104,3 +104,9 @@ For more details on each part of this fullstack application, check out these res
 * [Serverless Website](https://github.com/serverless-components/website)
 * [Serverless AWS DynamoDB](https://github.com/serverless-components/aws-dynamodb)
 * [Serverless AWS IAM Role](https://github.com/serverless-components/aws-iam-role)
+
+## Guides
+
+### How To Debug CORS Errors
+
+If you are running into CORS errors, see our guide on debugging them [within the Express Component's repo](https://github.com/serverless-components/express/blob/master/README.md#how-to-debug-cors-errors)
