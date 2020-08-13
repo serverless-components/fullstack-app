@@ -1,6 +1,6 @@
 component: express
-name: api
 app: fullstack
+name: api
 
 inputs:
   # Express application source code.
