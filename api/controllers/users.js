@@ -16,16 +16,16 @@ const register = async (req, res, next) => {
 
   try {
     await users.register(req.body)
-  } catch(error) {
+  } catch (error) {
     return res.status(400).json({ error: error.message })
   }
 
   let user
-  try { 
-    user = await users.getByEmail(req.body.email) 
-  } catch (error) { 
+  try {
+    user = await users.getByEmail(req.body.email)
+  } catch (error) {
     console.log(error)
-    return next(error, null) 
+    return next(error, null)
   }
 
   const token = jwt.sign(user, process.env.tokenSecret, {

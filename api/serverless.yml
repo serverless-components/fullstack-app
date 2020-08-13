@@ -1,5 +1,5 @@
 app: fullstack
-component: express
+component: express@dev
 name: api
 
 inputs:
@@ -18,4 +18,4 @@ inputs:
     # AWS DynamoDB Table Index name. Needed for the code to access it.
     dbIndex1: ${output:database.indexes.gsi1.name}
     # A secret token to sign the JWT tokens with.
-    # tokenSecret: secret_1234 # Change to secret via environment variable: ${env:tokenSecret}
+    tokenSecret: secret_1234 # Change to secret via environment variable: ${env:tokenSecret}

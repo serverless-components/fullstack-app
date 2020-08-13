@@ -41,6 +41,14 @@ app.use(passport.session())
 // Enable JSON use
 app.use(express.json())
 
+// Since Express doesn't support error handling of promises out of the box,
+// this handler enables that
+const asyncHandler = fn => (req, res, next) => {
+  return Promise
+    .resolve(fn(req, res, next))
+    .catch(next);
+};
+
 /**
  * Routes - Public
  */
@@ -49,9 +57,9 @@ app.options(`*`, (req, res) => {
   res.status(200).send()
 })
 
-app.post(`/users/register`, users.register)
+app.post(`/users/register`, asyncHandler(users.register))
 
-app.post(`/users/login`, users.login)
+app.post(`/users/login`, asyncHandler(users.login))
 
 app.get(`/test/`, (req, res) => {
   res.status(200).send('Request received')
@@ -61,7 +69,7 @@ app.get(`/test/`, (req, res) => {
  * Routes - Protected
  */
 
-app.post(`/user`, passport.authenticate('jwt', { session: false }), users.get)
+app.post(`/user`, passport.authenticate('jwt', { session: false }), asyncHandler(users.get))
 
 /**
  * Routes - Catch-All
@@ -76,7 +84,7 @@ app.get(`/*`, (req, res) => {
  */
 app.use(function (err, req, res, next) {
   console.error(err)
-  res.status(500).send('Internal Serverless Error')
+  res.status(500).json({ error: `Internal Serverless Error - "${err.message}"` })
 })
 
 module.exports = app
