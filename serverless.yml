@@ -1,3 +1,4 @@
+app: fullstack
 name: fullstack-app
 org: serverlessinc
 description: Deploy a serverless fullstack application using Express.js and React on AWS Lambda and AWS HTTP API
