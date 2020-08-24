@@ -1,5 +1,4 @@
 component: express
-app: fullstack
 name: api
 
 inputs:
