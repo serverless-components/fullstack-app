@@ -6,15 +6,6 @@ const {
 } = require('./controllers')
 
 /**
- * Inference:
- * 
- * When "inference" in serverless.yml is "true", the Serverless Framework will attempt to
- * initialize this application on every deployment, extract its endpoints and generate an OpenAPI specification (super cool)
- * However, the Framework won't have access to the environment variables, causing some things to crash on load.
- * That is why some things have try/catch blocks around them when they are required.
- */
-
-/**
  * Configure Passport
  */
 

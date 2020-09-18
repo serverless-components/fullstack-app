@@ -1,5 +1,5 @@
-component: express
 app: fullstack-app
+component: express
 name: api
 
 inputs:
@@ -9,8 +9,6 @@ inputs:
   roleName: ${output:permissions.name}
   # Enable this when you want to set a custom domain.
   # domain: api.${env:domain}
-  # Enabling this auto-generates an OpenAPI spec each time this is deployed.  Note: this feature is still experimental.
-  openApi: true
   # Environment variables
   env:
     # AWS DynamoDB Table name. Needed for the code to access it.
