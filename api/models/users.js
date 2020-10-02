@@ -67,7 +67,7 @@ const getByEmail = async(email) => {
     throw new Error(`"${email}" is not a valid email address`)
   }
 
-  // Save
+  // Query
   const params = {
     TableName: process.env.db,
     KeyConditionExpression: 'hk = :hk',
@@ -96,7 +96,7 @@ const getById = async(id) => {
     throw new Error(`"id" is required`)
   }
 
-  // Save
+  // Query
   const params = {
     TableName: process.env.db,
     IndexName: process.env.dbIndex1,
