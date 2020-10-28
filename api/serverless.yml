@@ -1,4 +1,3 @@
-app: fullstack-app
 component: express
 name: api
 
