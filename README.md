@@ -14,6 +14,8 @@ Install the latest version of the Serverless Framework:
 npm i -g serverless
 ```
 
+After installation, make sure you connect your AWS account by setting a provider in the org setting page on the [Serverless Dashboard](https://app.serverless.com).
+
 Then, initialize the `fullstack-app` template:
 
 ```
@@ -21,12 +23,9 @@ serverless init fullstack-app
 cd fullstack-app
 ```
 
-Then, add your AWS credentials in the `.env` file in the root directory, like this:
+Then, add the following environment variables in an `.env` file in the root directory, like this:
 
 ```text
-AWS_ACCESS_KEY_ID=JAFJ89109JASFKLJASF
-AWS_SECRET_ACCESS_KEY=AJ91J9A0SFA0S9FSKAFLASJFLJ
-
 # This signs you JWT tokens used for auth.  Enter a random string in here that's ~40 characters in length.
 tokenSecret=yourSecretKey
 
