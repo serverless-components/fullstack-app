@@ -14,6 +14,7 @@ Install the latest version of the Serverless Framework:
 npm i -g serverless
 ```
 
+
 After installation, make sure you connect your AWS account by setting a provider in the org setting page on the [Serverless Dashboard](https://app.serverless.com).
 
 Then, initialize the `fullstack-app` template:
